@@ -200,6 +200,15 @@ img {
     animation: fadeInDown 2s ease-in;
 }
 
+.long-showcase {
+    margin: 0 10%;
+    max-width: 80%;
+}
+
+.long-showcase.border {
+    border: 2px solid lightgray;
+}
+
 
 /***LOGO***/
 
@@ -1159,7 +1168,7 @@ footer .footer-social a:hover {
 }
 
 
-/***** PAGE DETAILS ******/
+/***** PAGE  ******/
 
 .content-close-details a {
     color: #333;

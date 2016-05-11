@@ -1,30 +1,46 @@
-﻿
-
 var app = angular.module('miniMe', [
   'ngRoute', 'ngMap', 'ngAnimate'
 ]);
 
 /**
-* Configure the Routes
-*/
+ * Configure the Routes
+ */
 app.config(['$routeProvider', function ($routeProvider) {
     $routeProvider
     // Home
-    .when("/", { templateUrl: "partials/home.html", controller: "PageCtrl" })
+        .when("/", {
+        templateUrl: "partials/home.html"
+        , controller: "PageCtrl"
+    })
 
     // Pages
-    .when("/work", { templateUrl: "partials/work.html", controller: "PageCtrl" })
+    .when("/work", {
+        templateUrl: "partials/work.html"
+        , controller: "PageCtrl"
+    })
 
-    .when("/experiences", { templateUrl: "partials/experiences.html", controller: "PageCtrl" })
-    .when("/blog", { templateUrl: "partials/blog.html", controller: "PageCtrl" })
-    .when("/contact", { templateUrl: "partials/contact.html", controller: "PageCtrl" })
+    .when("/experiences", {
+            templateUrl: "partials/experiences.html"
+            , controller: "PageCtrl"
+        })
+        .when("/blog", {
+            templateUrl: "partials/blog.html"
+            , controller: "PageCtrl"
+        })
+        .when("/contact", {
+            templateUrl: "partials/contact.html"
+            , controller: "PageCtrl"
+        })
 
     // else 404
-    .otherwise("/404", { templateUrl: "partials/404.html", controller: "PageCtrl" });
-} ]);
+    .otherwise("/404", {
+        templateUrl: "partials/404.html"
+        , controller: "PageCtrl"
+    });
+}]);
 
 
-app.controller('PageCtrl', function ( $scope/*, $location, $http */) {
+app.controller('PageCtrl', function ($scope /*, $location, $http */ ) {
     console.log("Page Controller reporting for duty.");
     $scope.pageClass = 'page-effect';
 
@@ -32,15 +48,142 @@ app.controller('PageCtrl', function ( $scope/*, $location, $http */) {
 
 app.controller("dataImagesWork", function ($scope) {
     $scope.images_work = [
-          { num: 1, category: 'marketing', src: "1100x1057", description: 'Oscar is a decent man. He used to clean porches with pleasure. ', url_details: "details.html" },
-          { num: 2, category: 'branding', src: "1100x1057", description: 'Oscar is a decent man. He used to clean porches with pleasure. ', url_details: "details.html" },
-          { num: 3, category: 'design', src: "1100x1057", description: 'Oscar is a decent man. He used to clean porches with pleasure. ', url_details: "details.html" },
-          { num: 4, category: 'photo', src: "1100x1057", description: 'Oscar is a decent man. He used to clean porches with pleasure. ', url_details: "details.html" },
-          { num: 5, category: 'marketing', src: "1100x1057", description: 'Oscar is a decent man. He used to clean porches with pleasure. ', url_details: "details.html" },
-          { num: 6, category: 'design', src: "1100x1057", description: 'Oscar is a decent man. He used to clean porches with pleasure. ', url_details: "details.html" },
-          { num: 7, category: 'photo', src: "1100x1057", description: 'Oscar is a decent man. He used to clean porches with pleasure. ', url_details: "details.html" },
-          { num: 8, category: 'marketing', src: "1100x1057", description: 'Oscar is a decent man. He used to clean porches with pleasure. ', url_details: "details.html" },
-          { num: 9, category: 'design', src: "1100x1057", description: 'Oscar is a decent man. He used to clean porches with pleasure. ', url_details: "details.html"}];
+        {
+            num: 1
+            , category: 'marketing'
+            , src: "Brand-Ed-Cover.jpg"
+            , description: 'Brand Education'
+            , url_details: "portfolio/brand-ed.html"
+          }
+
+
+
+        
+        , {
+            num: 2
+            , category: 'branding'
+            , src: "Good-Choices-Cover.jpg"
+            , description: 'Good Choices'
+            , url_details: "portfolio/good-choices.html"
+        }
+
+        
+        , {
+            num: 3
+            , category: 'photo'
+            , src: "Careers-Cover.jpg"
+            , description: 'Simplot Careers'
+            , url_details: "portfolio/careers.html"
+        }
+
+
+
+        
+        , {
+            num: 4
+            , category: 'design'
+            , src: "1100x1057"
+            , description: 'Oscar is a decent man. He used to clean porches with pleasure. '
+            , url_details: "details.html"
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        , {
+            num: 5
+            , category: 'marketing'
+            , src: "1100x1057"
+            , description: 'Oscar is a decent man. He used to clean porches with pleasure. '
+            , url_details: "details.html"
+        }
+
+
+
+
+
+
+
+
+
+
+
+        
+        , {
+            num: 6
+            , category: 'design'
+            , src: "1100x1057"
+            , description: 'Oscar is a decent man. He used to clean porches with pleasure. '
+            , url_details: "details.html"
+        }
+
+
+
+
+
+
+
+
+
+
+
+        
+        , {
+            num: 7
+            , category: 'photo'
+            , src: "1100x1057"
+            , description: 'Oscar is a decent man. He used to clean porches with pleasure. '
+            , url_details: "details.html"
+        }
+
+
+
+
+
+
+
+
+
+
+
+        
+        , {
+            num: 8
+            , category: 'marketing'
+            , src: "1100x1057"
+            , description: 'Oscar is a decent man. He used to clean porches with pleasure. '
+            , url_details: "details.html"
+        }
+
+
+
+
+
+
+
+
+
+
+
+        
+        , {
+            num: 9
+            , category: 'design'
+            , src: "1100x1057"
+            , description: 'Oscar is a decent man. He used to clean porches with pleasure. '
+            , url_details: "details.html"
+        }];
 
 });
 
@@ -48,9 +191,9 @@ app.controller("dataImagesWork", function ($scope) {
 //'use strict';
 app.directive('autoActive', ['$location', function ($location) {
     return {
-        restrict: 'A',
-        scope: false,
-        link: function (scope, element) {
+        restrict: 'A'
+        , scope: false
+        , link: function (scope, element) {
             function setActive() {
                 var path = $location.path();
                 if (path) {
@@ -70,10 +213,4 @@ app.directive('autoActive', ['$location', function ($location) {
             scope.$on('$locationChangeSuccess', setActive);
         }
     }
-} ]);
-
-
-
-
-
-
+}]);
