@@ -1,4 +1,4 @@
-﻿
+
 
 @media only screen and (max-width: 770px) 
 {
@@ -27,6 +27,13 @@ header nav .menu li {
 .box-content.right-position {
 	padding: 0 0 100px 0;
 }
+    header nav .menu li a {
+        margin-right: 0;
+    }
+    #section1 > .container .box-content .box-text {
+        background: rgba(35, 35, 35, .75)
+;
+    }
 }
 
 @media only screen and (max-width: 750px) 

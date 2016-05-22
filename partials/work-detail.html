@@ -1,0 +1,30 @@
+<div ng-include='"templates/close.html"'></div>
+
+<div ng-include="include"></div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".close-redirect").on("click", function (event) {
+            event.preventDefault();
+            linkLocation = this.href;
+            $("body").fadeOut(1000, redirectPage);
+        });
+
+        function redirectPage() {
+            window.location = linkLocation;
+        }
+    });
+</script>
+<script>
+    /*-------------------------------------------------*/
+    /* = preload animate
+    /*-------------------------------------------------*/
+
+    try {
+        var timer;
+        window.clearTimeout(timer);
+        timer = setTimeout(function () {
+            $("#loader-wrapper").slideUp()
+        }, 2000);
+    } catch (err) {}
+</script>

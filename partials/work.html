@@ -1,5 +1,4 @@
 <!--SECTION WORK-->
-
 <section id="section2" class="cd-section">
     <div class="container">
         <div class="row">
@@ -24,12 +23,12 @@
                 <div class="portfolio albumContainer activegrid" ng-controller="dataImagesWork">
 
                     <ul id="product" class="nav-pills nav-stacked rectangle-list" ng-controller="dataImagesWork">
-                        <li class="col-md-4 my-gallery-animation item grid" ng-repeat="product in images_work | filter:myFilter">
+                        <li class="col-md-4 col-sm-6 my-gallery-animation item grid" ng-repeat="product in images_work | filter:myFilter">
                             <figure class="effect-oscar">
-                                <a href=""><img ng-src="/liselnicole.design/images/portfolio/{{product.src}}" alt="" /></a>
+                                <a href=""><img ng-src="/images/portfolio/{{product.src}}" alt="" /></a>
                                 <figcaption>
                                     <p>{{product.description}}</p>
-                                    <a href="partials/{{product.url_details}}" class="smooth-redirect"></a>
+                                    <a href="#/work-detail/{{ product.url_details }}" class="smooth-redirect"></a>
                                 </figcaption>
                             </figure>
                         </li>
@@ -41,13 +40,43 @@
         </div>
     </div>
 </section>
-<!-- cd-section -->
+<!--
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1> Process </h1>
+                <div class="col-md-4 col-sm-4">
+                    <div class="box-text">
+                        <h2>Inspiration</h2>
+                        <p>After conducting user research, I put pencil to paper to create some low-fidelity prototypes</p>
+                        
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <div class="box-text">
+                        <h2>Ideation</h2>
+                        
+                    </div>
+                </div>
 
+                <div class="col-md-4 col-sm-4">
+                    <div class="box-text">
+                        <h2>Implementation</h2>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+-->
+<!-- cd-section -->
 
 <script>
     /********************************************
-                                CAROUSEL
-                                ********************************************/
+                                            CAROUSEL
+                                            ********************************************/
     $("#owl-demo").owlCarousel({
 
         navigation: true, // Show next and prev buttons
@@ -73,8 +102,8 @@
 
 <script type="text/javascript">
     /********************************************
-                                CLOSE PAGE DETAIL
-                                ********************************************/
+                                            CLOSE PAGE DETAIL
+                                            ********************************************/
     //        $(document).ready(function () {
     $(".smooth-redirect").on("click", function (event) {
         event.preventDefault();
