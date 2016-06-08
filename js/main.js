@@ -1,3 +1,4 @@
+// Include dependancies 
 var app = angular.module('miniMe', [
   'ngRoute', 'ngMap', 'ngAnimate'
 ]);
@@ -18,6 +19,8 @@ app.config(['$routeProvider', function ($routeProvider) {
         templateUrl: "partials/work.html"
         , controller: "PageCtrl"
     })
+    
+    // When url is /work-detail, look for a var and call it proj
     .when("/work-detail/:proj", {
         templateUrl: "partials/work-detail.html"
         , controller: "WorkDetailCtrl"
@@ -27,10 +30,12 @@ app.config(['$routeProvider', function ($routeProvider) {
         templateUrl: "partials/experiences.html"
         , controller: "PageCtrl"
     })
-    .when("/blog", {
-        templateUrl: "partials/blog.html"
-        , controller: "PageCtrl"
-    })
+    
+//    .when("/blog", {
+//        templateUrl: "partials/blog.html"
+//        , controller: "PageCtrl"
+//    })
+    
     .when("/contact", {
         templateUrl: "partials/contact.html"
         , controller: "PageCtrl"
@@ -45,11 +50,10 @@ app.config(['$routeProvider', function ($routeProvider) {
 
 app.run(function($rootScope, $location) {
     $rootScope.$on('$routeChangeSuccess', function () {
-        //console.log('change');
-        //Check path and hide nav if it include work detail
+
+        // Check path and hide nav if it includes work detail
         var path = $location.path(),
             findWorkDetail = path.indexOf('work-detail');
-        //console.log(findWorkDetail);
         
         if (findWorkDetail !== -1) {
              $rootScope.hideHeader = true;
@@ -63,96 +67,56 @@ app.run(function($rootScope, $location) {
     })
 });
 
-app.controller('PageCtrl', function ($scope /*, $location, $http */ ) {
-    //console.log("Page Controller reporting for duty.");
+app.controller('PageCtrl', function ($scope) {
+    // Add class page-effect
     $scope.pageClass = 'page-effect';
-   
 });
 
 app.controller('WorkDetailCtrl', function ($scope , $location, $routeParams) {
-    //console.log("Work Detail Ctrl reporting for duty.");
-    
-    //console.log($routeParams.proj);
-   
+    // Pull in template based on proj var
     $scope.include = 'partials/portfolio/' + $routeParams.proj + '.html';
-    
 });
 
-
 app.controller("dataImagesWork", function ($scope) {
+    // Create array of project objects
     $scope.images_work = [
-
         {
-            num: 2
-            , category: 'branding'
-            , src: "Good-Choices-Cover.jpg"
-            , description: 'Good Choices'
-            , url_details: "good-choices"
+            num: 1,
+            src: "Good-Choices-Cover.jpg",
+            description: 'Good Choices',
+            url_details: "good-choices"
         }
-        
         , {
-            num: 3
-            , category: 'photo'
-            , src: "Careers-Cover.jpg"
-            , description: 'Simplot Careers'
-            , url_details: "careers"
+            num: 2,
+            src: "Careers-Cover.jpg",
+            description: 'Simplot Careers',
+            url_details: "careers"
         }
-        
         , {
-            num: 6
-            , category: 'design'
-            , src: "Fert-App-Cover.jpg"
-            , description: 'Fertilizer Spread Rates App'
-            , url_details: "fert-app"
+            num: 3,
+            src: "Fert-App-Cover.jpg",
+            description: 'Fertilizer Spread Rates App',
+            url_details: "fert-app"
         }
-        
         , {
-            num: 4
-            , category: 'design'
-            , src: "Fall-Harvest-Cover.jpg"
-            , description: 'Fall Harvest'
-            , url_details: "fall-harvest"
+            num: 4,
+            src: "Fall-Harvest-Cover.jpg",
+            description: 'Fall Harvest',
+            url_details: "fall-harvest"
         }
-        
         , {
-            num: 4
-            , category: 'design'
-            , src: "WWL-Cover.jpg"
-            , description: 'Film Festival'
-            , url_details: "wwl"
+            num: 5,
+            src: "WWL-Cover.jpg",
+            description: 'Film Festival',
+            url_details: "wwl"
         }
-        
         , {
-            num: 1
-            , category: 'marketing'
-            , src: "MHL-Cover.jpg"
-            , description: 'My Holiday Lawn'
-            , url_details: "mhl"
-         }
-        
-        , {
-            num: 1
-            , category: 'marketing'
-            , src: "Brand-Ed-Cover.jpg"
-            , description: 'Brand Education'
-            , url_details: "brand-ed"
-         }
-        
-        , {
-            num: 5
-            , category: 'marketing'
-            , src: "Brand-Cover.jpg"
-            , description: 'Simplot Brand'
-            , url_details: "brand"
+            num: 6,
+            src: "Brand-Cover.jpg",
+            description: 'Simplot Brand',
+            url_details: "brand"
         }
-        
-        , {
-            num: 5
-            , category: 'marketing'
-            , src: "Simplot-com-Cover.jpg"
-            , description: 'Corporate Rebranding'
-            , url_details: "simplot-com"
-        }];
+    ];
 
 });
 app.controller("workDetails", function ($scope) {
