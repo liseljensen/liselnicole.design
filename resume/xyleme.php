@@ -1,0 +1,1 @@
+<?php  header( 'Location: https://indd.adobe.com/view/a9e9c3d1-cda7-428a-8eb3-0661e1b26491' ) ;  ?>

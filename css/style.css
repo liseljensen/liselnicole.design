@@ -545,6 +545,7 @@ figure.effect-oscar img {
 }
 
 figure.effect-oscar figcaption {
+    background-color: rgba(0, 0, 0, 0.5);
     padding: 3em;
     -webkit-transition: background-color 0.35s;
     transition: background-color 0.35s;
@@ -562,11 +563,11 @@ figure.effect-oscar figcaption::before {
 
 figure.effect-oscar figcaption::before,
 figure.effect-oscar p {
-    opacity: 0;
+    opacity: 1;
     -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
     transition: opacity 0.35s, transform 0.35s;
-    -webkit-transform: scale(0);
-    transform: scale(0);
+    -webkit-transform: scale(.9);
+    transform: scale(.9);
 }
 
 figure.effect-oscar:hover figcaption::before,
