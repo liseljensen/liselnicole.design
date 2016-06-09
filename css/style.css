@@ -4,12 +4,12 @@
 /*****************************************************
 TABLE OF CONTENTS
 1. Universal Styles
-Loader
-2. Header & Nav Styles
-3. Main Body Content
-Portfolio
-4. Form Controls
-5. Footer Content 
+2. Loader
+3. Header & Nav Styles
+4. Main Body Content
+5. Portfolio
+6. Form Controls
+7. Footer Content 
 ******************************************************/
 /****************************
 *****************************
@@ -229,7 +229,7 @@ header nav .menu li a {
 }
 /****************************
 *****************************
-2. Main Body Content
+4. Main Body Content
 *****************************
 ****************************/
 /***Structure***/
@@ -299,7 +299,7 @@ header nav .menu li a {
 }
 /****************************
 *****************************
-2. Portfolio
+5. Portfolio
 *****************************
 ****************************/
 /* Process */
@@ -439,6 +439,9 @@ dt {
 .grid figure figcaption::before,
 .grid figure figcaption::after {
   pointer-events: none;
+}
+.grid .item:hover p {
+  cursor: pointer;
 }
 .grid figure figcaption,
 .grid figure figcaption > a {
@@ -684,7 +687,11 @@ figure.effect-oscar:hover img {
 .box-content.blog-r-posts {
   padding: 0 0 100px 0;
 }
-/***CONTACT*****/
+/****************************
+*****************************
+6. Form
+*****************************
+****************************/
 #section4 {
   padding: 100px 0 0 0;
 }
@@ -829,7 +836,11 @@ figure.effect-oscar:hover img {
 #contact_form .error {
   display: none;
 }
-/***FOOTER****/
+/****************************
+*****************************
+7. Footer
+*****************************
+****************************/
 .footer-social a {
   width: 25px;
   height: 25px;
