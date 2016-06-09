@@ -302,6 +302,10 @@ header nav .menu li a {
 2. Portfolio
 *****************************
 ****************************/
+/* Process */
+#process .box-text {
+  min-height: 500px;
+}
 /* Filter */
 dl {
   margin-bottom: 5em;
