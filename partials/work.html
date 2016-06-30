@@ -1,30 +1,70 @@
 <!--SECTION WORK-->
 <section>
+    <div id="project-highlights" class="container">
+        <div class="col-md-12"> 
+            <div class="box-content">
+            <h1>PROJECT OVERVIEWS</h1>
+                <div class="col-md-6">
+                    <div id="video-container">
+                        <div class="overlay overlay-video" data-toggle="modal" data-target="#video"> <i class="fa fa-play-circle-o"></i> </div>
+                    </div>                        
+                </div>
+                <div class="col-md-6">
+                    <div class="box-text" style="min-height: 300px;">
+                    <h2>More coming soon...</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
     <div id="process" class="container">
         <div class="row">
             <div class="col-md-12">
-                <div class="box-content">
-                <h1> PROCESS </h1>
+                <div class="box-content process-content">
+                    <h1>UX PROCESS </h1>
                     <div class="col-md-4 col-sm-4">
                         <div class="box-text">
-                            <img src="/images/portfolio/inspiration.jpg" alt="Picture of notebook with sketches" />
+                            <img src="/images/inspiration.png" alt="Picture of notebook with sketches" />
                             <h2>Inspiration</h2>
-                            <p>After conducting user research and mentally conceptualizing what was learned, I put pencil to paper to create some low-fidelity prototypes in the form of rough sketches. This process allows me to validate or discredit ideas quickly with little time and effort.  </p>
+                            <ul class="bullet-indent process">
+                                <li><a href="/pdf/research-plan.pdf" target="_blank">Research Plan</a></li>
+                                <li><a href="/pdf/in-person-interview-protocol.pdf" target="_blank">Interviews</a></li>
+                                <li>Observations</li>
+                                <li>Market Research</li>
+                                <li><a href="https://liselnicole.typeform.com/to/Y45BKh" target="_blank">Surveys</a> <span>(feel free to fill out survey)</span></li>
+                                <li>Analytics Analysis</li>
+                                <li><a href="/pdf/affinity-diagrams.pdf" target="_blank">Affinity Diagrams</a></li>
+                                <li><a href="/pdf/inspiration-board.pdf" target="_blank">Inspiration Board</a></li>
+                            </ul>
 
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-4">
                         <div class="box-text">
-                            <img class="border" src="/images/portfolio/ideation.jpg" alt="Image of wireframes" />
+                            <img src="/images/ideation.png" alt="Image of wireframes" />
                             <h2>Ideation</h2>
-                            <p>Ideation occurs in the form of wireframes, user flows, information architecture, and higher-fidelity interactive prototypes.  I love this phase of the design process because it is when the project starts to take shape and when some real ah-ha moments occur. </p>
+                            <ul class="bullet-indent process">
+                                <li><a href="/pdf/sketches.pdf" target="_blank">Sketches</a></li>
+                                <li><a href="/pdf/customer-journey.pdf" target="_blank">Customer Journey Maps</a></li>
+                                <li><a href="/pdf/personas.pdf" target="_blank">Personas</a></li>
+                                <li><a href="/pdf/IA.pdf" target="_blank">Information Architecture</a></li>
+                                <li><a href="/pdf/user-flow.pdf" target="_blank">User Flows</a></li>
+                                <li><a href="/pdf/wireframes.pdf" target="_blank">Wireframes</a></li>
+                                <li>Analytics Analysis</li>
+                            </ul>
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-4">
                         <div class="box-text">
-                            <img src="/images/portfolio/implemenation.jpg" alt="Showcase of website" />
+                            <img src="/images/implementation.png" alt="Showcase of website" />
                             <h2>Implementation</h2>
-                            <p>Implementation is hardly the end of a project. After a site goes live, it is live-tested, tracked and iterated upon to ensure the user experience is continually improving. </p>
+                            <ul class="bullet-indent process">
+                                <li><a href="https://xd.adobe.com/view/6022c203-2432-4cf4-5831-6ea0ce8fc4b5/" target="_blank">Prototyping</a></li>
+                                <li><a href="/pdf/Summative-Usability-Evaluation.pdf" target="_blank">User Testing</a></li>
+                                <li>Measure &amp; Evaluate</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -35,30 +75,48 @@
 <section id="section2" class="cd-section">
     <div class="container">
         <div class="row">
-            
-                <h1> RECENT WORK </h1>
+
+            <h1> UI WORK </h1>
 
 
-                <div class="portfolio albumContainer activegrid" ng-controller="dataImagesWork">
+            <div class="portfolio albumContainer activegrid" ng-controller="dataImagesWork">
 
-                    <ul id="product" class="nav-pills nav-stacked rectangle-list" ng-controller="dataImagesWork">
-                        <li class="col-md-4 col-sm-6 my-gallery-animation item grid" ng-repeat="product in images_work | filter:myFilter">
-                            <figure class="effect-oscar">
-                                <a href=""><img ng-src="/images/portfolio/{{product.src}}" alt="" /></a>
-                                <figcaption>
-                                    <p>{{product.description}}</p>
-                                    <a href="#/work-detail/{{ product.url_details }}" class="smooth-redirect"></a>
-                                </figcaption>
-                            </figure>
-                        </li>
-                    </ul>
+                <ul id="product" class="nav-pills nav-stacked rectangle-list" ng-controller="dataImagesWork">
+                    <li class="col-md-4 col-sm-6 my-gallery-animation item grid" ng-repeat="product in images_work | filter:myFilter">
+                        <figure class="effect-oscar">
+                            <a href=""><img ng-src="/images/portfolio/{{product.src}}" alt="" /></a>
+                            <figcaption>
+                                <p>{{product.description}}</p>
+                                <a href="#/work-detail/{{ product.url_details }}" class="smooth-redirect"></a>
+                            </figcaption>
+                        </figure>
+                    </li>
+                </ul>
 
-                </div>
             </div>
-            <!--close box content-->
         </div>
+        <!--close box content-->
     </div>
 </section>
+<div class="modal fade" id="video" tabindex="-1" role="dialog" aria-labelledby="planModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content modal-lg">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <div class="iframeWrapper">
+                    <div class="iframeWrapper">
+                        <iframe src="https://player.vimeo.com/video/172936832" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
 <!--
 
 -->
@@ -66,8 +124,8 @@
 
 <script>
     /********************************************
-                                            CAROUSEL
-                                            ********************************************/
+                                                    CAROUSEL
+                                                    ********************************************/
     $("#owl-demo").owlCarousel({
 
         navigation: true, // Show next and prev buttons
@@ -89,12 +147,16 @@
         $('.albumFilter .current').removeClass('current');
         $(this).addClass('current');
     });
+    $('.modal-link').on('click', function (e) {
+        console.log('click');
+        e.preventDefault();
+    });
 </script>
 
 <script type="text/javascript">
     /********************************************
-                                            CLOSE PAGE DETAIL
-                                            ********************************************/
+                                                    CLOSE PAGE DETAIL
+                                                    ********************************************/
     //        $(document).ready(function () {
     $(".smooth-redirect").on("click", function (event) {
         event.preventDefault();
